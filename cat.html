@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var cat_deg = 0;
+        var hue = 0;
+
+        function sayHello() {
+            var sound = new Audio('https://sound-pack.net/download/Sound_16303.mp3').play();
+            cat_deg += 30;
+            hue += 10;
+
+            var cat = document.getElementById('cat');
+            cat.style.transform = 'rotate('+cat_deg+'deg)';
+            cat.style.filter = 'hue-rotate('+hue+'deg)';
+        }
+
+        var interval = setInterval(sayHello, 1000);
+        setTimeout(function () {
+            clearInterval(interval)
+        }, 5000);
+
+    </script>
+</head>
+<body>
+<img id="cat" onclick="sayHello()" src="https://bigpicture.ru/wp-content/uploads/2012/09/kitten-17.jpg"/>
+</body>
+</html>
